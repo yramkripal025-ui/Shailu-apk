@@ -25,6 +25,13 @@ jobs:
           node --version
           npm --version
 
+      - name: Prepare web directory
+        run: |
+          mkdir -p www
+          cp index.html www/index.html
+          test -f www/index.html
+          ls -lh www/index.html
+
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
